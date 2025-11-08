@@ -23,6 +23,10 @@ jobs:
           distribution: 'temurin'
       - name: Unit Tests
         run: mvn -Dtest=com.testjunittest.MainTest test
+      - name: List generated files
+        run: |
+          echo "Checking JaCoCo report files..."
+          find target -name "*.xml" | grep jacoco || echo "No JaCoCo XML found!"
       - name: CodeCov
         uses: codecov/codecov-action@v5
         with:
