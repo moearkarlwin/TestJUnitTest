@@ -4,7 +4,6 @@ public class Main {
 
     void display(String message) {
         IO.println("Hello " + message);
-        IO.println("Hi " + message);
     }
 
     static void main() {

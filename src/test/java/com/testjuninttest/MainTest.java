@@ -25,6 +25,6 @@ class MainTest {
     @org.junit.jupiter.api.Test
     void display() {
         m.display("Su Su");
-        assertEquals("Hello Su Su\r\nHi Su Su\r\n", outContent.toString());
+        assertEquals("Hello Su Su", outContent.toString().trim());
     }
 }
