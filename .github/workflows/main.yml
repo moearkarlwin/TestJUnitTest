@@ -26,7 +26,8 @@ jobs:
       - name: CodeCov
         uses: codecov/codecov-action@v5
         with:
-          #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          directory: ./target/site/jacoco
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          #directory: ./target/site/jacoco
+          files: build/reports/jacoco/test/jacocoTestReport.xml
           flags: Unit Tests # optional
           verbose: true # optional (default = false)
