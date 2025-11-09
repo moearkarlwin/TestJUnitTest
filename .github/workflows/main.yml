@@ -27,7 +27,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run all tests and generate JaCoCo report
-        run: mvn test -Dtest=*Main* -q
+        run: mvn clean verify -Dtest=*Main*
 
       - name: Debug JaCoCo report
         run: |
@@ -44,3 +44,6 @@ jobs:
           flags: unittests
           fail_ci_if_error: true
           verbose: true
+
+      - name: Print coverage XML size
+        run: ls -lh target/site/jacoco/jacoco.xml
