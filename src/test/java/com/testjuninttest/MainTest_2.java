@@ -1,28 +1,32 @@
 package com.testjuninttest;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
+class MainTest_2 {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
         System.setOut(new PrintStream(outContent));
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @AfterEach
     void tearDown() {
         System.setOut(originalOut);
     }
 
-    @org.junit.jupiter.api.Test
-    void display() {
-        Main.display("Su Su");
-        assertEquals("Hello Su Su", outContent.toString().trim());
+    @Test
+    void display2() {
+        Main.display2("Mg Mg");
+        assertEquals("Hi Mg Mg", outContent.toString().trim());
     }
 }
